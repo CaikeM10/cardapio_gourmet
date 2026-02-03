@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
+import { CartProvider } from "@/context/CartContext";
+import { SearchProvider } from "@/context/SearchContext";
+
+export const metadata: Metadata = {
   title: "Espaço Gourmet",
-  description: "Cardápio Digital",
+  description: "Cardápio digital do Espaço Gourmet",
 };
 
 export default function RootLayout({
@@ -12,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <SearchProvider>
+          <CartProvider>{children}</CartProvider>
+        </SearchProvider>
+      </body>
     </html>
   );
 }

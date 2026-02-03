@@ -1,12 +1,18 @@
-export default function Logo() {
+import Image from "next/image";
+
+type LogoProps = {
+  className?: string;
+};
+
+export default function Logo({ className }: LogoProps) {
   return (
-    <div className="flex items-center gap-2">
-      <img
-        src="/logo.png"
-        alt="Espaço Gourmet"
-        className="h-8 w-8 object-contain"
-      />
-      <span className="font-bold text-lg">Espaço Gourmet</span>
-    </div>
+    <Image
+      src="/logo_espaco.jpg"
+      alt="Espaço Gourmet"
+      width={200}
+      height={200}
+      className={className}
+      priority
+    />
   );
 }

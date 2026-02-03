@@ -12,11 +12,11 @@ export default function RestaurantHero({
   rating = 5.0,
 }: RestaurantHeroProps) {
   return (
-    <div className="relative">
+    <div className="relative -mt-16">
       {/* Imagem do restaurante */}
-      <div className="h-52 w-full">
+      <div className="h-72 w-full">
         <img
-          src="/restaurant.jpg"
+          src="/fundo.png"
           alt={name}
           className="h-full w-full object-cover"
         />
@@ -35,7 +35,7 @@ export default function RestaurantHero({
           </div>
         </div>
 
-        <div className="mt-2">
+        <div className="mt-2 flex items-center gap-2">
           <span
             className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${
               isOpen ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
@@ -43,6 +43,14 @@ export default function RestaurantHero({
           >
             {isOpen ? "Aberto agora" : "Fechado"}
           </span>
+
+          {/* Saiba mais */}
+          <a
+            href="/sobre"
+            className="rounded-full border px-3 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50"
+          >
+            Saiba mais
+          </a>
         </div>
       </div>
     </div>
